@@ -1,11 +1,11 @@
 # SematIn-Releases
 
-## Cara Install
+## How to Install
 
-1. Unduh atau clone repositori ini.
-2. Buka halaman ekstensi browser:
+1. Download or clone this repository.
+2. Open your browser's extensions page:
    - Chrome: `chrome://extensions`
    - Microsoft Edge: `edge://extensions`
-3. Aktifkan **Developer mode**.
-4. Pilih **Load unpacked** dan pilih folder SematIn yang berisi `manifest.json`.
-5. Setelah mengubah file ekstensi, muat ulang ekstensi dari halaman yang sama.
+3. Enable **Developer mode**.
+4. Select **Load unpacked** and choose the SematIn folder containing `manifest.json`.
+5. After changing extension files, reload the extension from the same page.
