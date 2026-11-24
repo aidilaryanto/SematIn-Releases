@@ -24,7 +24,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </span>
         <span class="brand-name">SematIn</span>
-        <span class="brand-version">v1.9</span>
+        <span class="brand-version">v2.0</span>
       </a>
       <nav class="site-nav" aria-label="Navigasi utama">
         <a href="#fitur">Fitur</a>
@@ -48,7 +48,7 @@
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span> v1.9 — Baru: sisip gambar, klik-kanan, &amp; pustaka gambar</p>
+          <p class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span> v2.0 — Baru: template include, Trash, &amp; backup otomatis</p>
           <h1 class="hero-title">
             <span class="reveal-line">Simpan sekali,</span>
             <span class="reveal-line"><em class="accent-serif">gunakan</em> <span class="gradient-text">berkali-kali.</span></span>
@@ -135,8 +135,7 @@
               <span class="bento-progress"><span class="bento-progress-bar"></span> Mengunggah gambar…</span>
             </div>
             <h3>Sisip gambar</h3>
-            <p>Gambar diunggah otomatis ke Catbox saat disisipkan — sebagai gambar di dalam teks atau sebagai file lampiran. Bisa banyak file sekaligus, progresnya terlihat langsung di tempatnya.</p>
-            <p class="bento-tag">Baru di v1.9</p>
+            <p>Gambar diunggah otomatis ke Catbox saat disisipkan — sebagai gambar di dalam teks atau sebagai file lampiran. Foto besar dikompresi dulu (ukuran &amp; kualitas bisa diatur). Bisa banyak file sekaligus, progresnya terlihat langsung di tempatnya.</p>
           </article>
 
           <article class="bento-card spotlight-card reveal">
@@ -154,13 +153,20 @@
           <article class="bento-card spotlight-card reveal">
             <div class="bento-visual" aria-hidden="true"><svg class="bento-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16"/><path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2"/><circle cx="13" cy="7" r="1" fill="currentColor"/><rect x="8" y="2" width="14" height="14" rx="2"/></svg></div>
             <h3>Pustaka gambar</h3>
-            <p>Semua gambar yang pernah diunggah dari template kamu terkumpul di satu tempat. Pakai ulang sebagai gambar atau file, tanpa upload lagi.</p>
+            <p>Semua gambar yang pernah diunggah dari template kamu terkumpul di satu tempat. Unggah langsung ke pustaka, lalu pakai ulang sebagai gambar atau file, tanpa upload lagi.</p>
           </article>
 
           <article class="bento-card spotlight-card reveal">
             <div class="bento-visual" aria-hidden="true"><svg class="bento-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg></div>
             <h3>Variabel otomatis</h3>
             <p><code>{{nama}}</code>, tanggal hari ini dengan format bebas, sampai nomor urut otomatis — semuanya terisi sendiri setiap kali template dipakai.</p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-visual" aria-hidden="true"><svg class="bento-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
+            <h3>Template include</h3>
+            <p>Pakai template di dalam template lain dengan <code>{{include:Nama}}</code> — sampai 10 tingkat, siklus terdeteksi otomatis. Variabel dan gambar dari template yang di-include ikut terisi.</p>
+            <p class="bento-tag">Baru di v2.0</p>
           </article>
 
           <article class="bento-card spotlight-card reveal">
@@ -196,13 +202,14 @@
           <article class="bento-card spotlight-card reveal">
             <div class="bento-visual" aria-hidden="true"><svg class="bento-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12a9 3 0 0 0 5 2.69"/><path d="M21 9.3V5"/><path d="M3 5v14a9 3 0 0 0 6.47 2.88"/><path d="M12 12v4h4"/><path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16"/></svg></div>
             <h3>Backup &amp; pulihkan</h3>
-            <p>Ekspor-impor template sebagai JSON, dan pulihkan koleksi yang otomatis tersimpan setiap kali ada template yang dihapus.</p>
+            <p>Ekspor-impor template sebagai JSON, cadangan otomatis terjadwal setiap hari, minggu, atau bulan, dan pulihkan dari backup terakhir. Template yang dihapus masuk Trash dulu selama 30 hari.</p>
+            <p class="bento-tag">Baru di v2.0</p>
           </article>
 
           <article class="bento-card spotlight-card reveal">
             <div class="bento-visual" aria-hidden="true"><svg class="bento-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2"/><path d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"/><path d="M16 12a4 4 0 0 0-4-4"/><path d="m19 5-1.256 1.256"/><path d="M20 12h2"/></svg></div>
             <h3>Tampilan sesuai selera</h3>
-            <p>Mode gelap atau terang, buka sebagai popup atau di sidebar, dan perbesar editor saat menulis template panjang.</p>
+            <p>Mode gelap atau terang — bisa mengikuti sistem — buka sebagai popup atau di sidebar, dan perbesar editor saat menulis template panjang.</p>
           </article>
 
           <div class="more-features reveal">
@@ -316,7 +323,7 @@
           <h2>Berhenti mengetik hal yang sama.</h2>
           <p>Simpan sekali, pakai berkali-kali — mulai dari template pertamamu hari ini.</p>
           <a class="btn btn-primary btn-shimmer btn-lg" href="https://github.com/aidilaryanto/SematIn-Releases/releases/latest" target="_blank" rel="noopener">Pasang SematIn — Gratis</a>
-          <p class="final-cta-note">v1.9 • Chrome &amp; Edge • Tanpa akun</p>
+          <p class="final-cta-note">v2.0 • Chrome &amp; Edge • Tanpa akun</p>
         </div>
       </div>
     </section>
