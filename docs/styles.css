@@ -293,105 +293,30 @@ code {
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .hero-trust { margin-top: 18px; font-size: 0.875rem; color: var(--text-muted); }
 
-/* Hero mockup — a static recreation of the SematIn popup */
-.hero-visual { position: relative; }
-.mockup {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 18px;
-  max-width: 440px;
+/* Hero preview — the real SematIn popup (popup.html/popup.css, verbatim) in an
+   iframe, so the preview is pixel-identical to the extension. The iframe is
+   470px wide (the popup's real width); on narrow screens it is scaled down
+   via --preview-scale, set by script.js. */
+.hero-visual { position: relative; min-width: 0; }
+.preview-frame-wrap {
+  width: 470px;
+  max-width: 100%;
   margin-left: auto;
+  overflow: hidden;
   transform: rotate(1.2deg);
+  transform-origin: top right;
 }
-.mockup-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
+.preview-frame {
+  display: block;
+  width: 470px;
+  height: 445px;
+  border: none;
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  background: #e8e8f4;
+  transform: scale(var(--preview-scale, 1));
+  transform-origin: top left;
 }
-.mockup-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 800;
-  font-size: 1rem;
-}
-.mockup-brand-icon {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  background: var(--primary);
-  color: #fff;
-}
-.mockup-version {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--primary);
-  background: var(--primary-soft);
-  border-radius: 999px;
-  padding: 2px 7px;
-}
-.mockup-new {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--primary);
-  background: var(--primary-soft);
-  border-radius: 999px;
-  padding: 5px 11px;
-}
-.mockup-search {
-  color: var(--text-muted);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-soft);
-  border-radius: 9px;
-  padding: 8px 12px;
-  font-size: 0.88rem;
-  margin-bottom: 10px;
-}
-.mockup-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
-.mockup-tab {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  padding: 5px 11px;
-  border-radius: 999px;
-}
-.mockup-tab.active { background: var(--primary); color: #fff; }
-.mockup-card {
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-  margin-bottom: 10px;
-  background: var(--bg-card);
-}
-.mockup-card:last-child { margin-bottom: 0; }
-.mockup-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 0.92rem;
-}
-.mockup-card p {
-  margin-top: 5px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-}
-.mockup-attach {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--primary);
-  background: var(--primary-soft);
-  border-radius: 999px;
-  padding: 3px 8px;
-  white-space: nowrap;
-}
-.mockup-star { color: #f59e0b; }
-.mockup-use { display: inline-block; margin-top: 8px; font-size: 0.82rem; font-weight: 700; color: var(--primary); }
 
 .mockup-fill {
   position: absolute;
@@ -447,9 +372,11 @@ section { padding: 84px 0; }
 .section-sub { margin-top: 14px; color: var(--text-secondary); font-size: 1.05rem; }
 
 /* Scroll reveal — hidden only when JS is running (html.js), so content stays
-   visible if JS is disabled or the observer is unavailable. */
+   visible if JS is disabled or the observer is unavailable.
+   The visible rule must beat the hidden rule: html.js .reveal is (0,2,1),
+   so .reveal.visible (0,2,0) loses — scope the visible rule the same way. */
 html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+html.js .reveal.visible { opacity: 1; transform: none; }
 
 /* Demo */
 .demo { background: var(--bg-subtle); }
@@ -718,7 +645,7 @@ html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0
 /* Responsive */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 64px; }
-  .mockup { margin-inline: auto; }
+  .preview-frame-wrap { margin-inline: auto; }
   .mockup-fill { left: 0; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .bento-wide { grid-column: span 2; }
@@ -740,5 +667,5 @@ html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  html.js .reveal { opacity: 1; transform: none; }
 }

@@ -37,6 +37,19 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
+  /* Hero preview scaling — the popup iframe is fixed at 470px (the popup's
+     real width); scale it down to fit narrow containers. */
+  var previewWrap = document.getElementById("preview-frame-wrap");
+  var previewFrame = document.getElementById("preview-frame");
+  function fitPreview() {
+    if (!previewWrap || !previewFrame) { return; }
+    var scale = Math.min(1, previewWrap.clientWidth / 470);
+    previewFrame.style.setProperty("--preview-scale", scale);
+    previewWrap.style.height = (445 * scale) + "px";
+  }
+  fitPreview();
+  window.addEventListener("resize", fitPreview);
+
   /* Marquee — duplicate content for a seamless loop */
   var track = document.getElementById("marquee-track");
   if (track) { track.innerHTML += track.innerHTML; }
