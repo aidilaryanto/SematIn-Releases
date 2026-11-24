@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SematIn — Simpan sekali, gunakan berkali-kali</title>
+  <meta name="description" content="SematIn adalah ekstensi Chrome untuk menyimpan template teks sekali, lalu mengisinya ke WhatsApp, Threads, Facebook, dan kolom teks apa pun — lengkap dengan variabel, gambar, dan lampiran. Gratis, tanpa akun.">
+  <meta property="og:title" content="SematIn — Simpan sekali, gunakan berkali-kali">
+  <meta property="og:description" content="Ekstensi Chrome untuk template teks yang bisa dipakai berkali-kali. Variabel, gambar, dan sekali klik langsung terisi.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M10 9h12v2H10zM10 14h12v2H10zM10 19h7v2h-7z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Newsreader:ital,opsz,wght@1,6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="SematIn — kembali ke atas">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </span>
+        <span class="brand-name">SematIn</span>
+        <span class="brand-version">v1.9</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="#fitur">Fitur</a>
+        <a href="#cara-kerja">Cara Kerja</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Ganti tema gelap atau terang" aria-pressed="false">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span class="theme-knob" aria-hidden="true"></span>
+        </button>
+        <a class="btn btn-primary btn-sm" href="https://github.com/aidilaryanto/SematIn-Releases/releases" target="_blank" rel="noopener">Pasang di Chrome</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-badge"><span class="hero-badge-dot" aria-hidden="true"></span> v1.9 — Baru: sisip gambar, klik-kanan, &amp; pustaka gambar</p>
+          <h1 class="hero-title">
+            <span class="reveal-line">Simpan sekali,</span>
+            <span class="reveal-line"><em class="accent-serif">gunakan</em> <span class="gradient-text">berkali-kali.</span></span>
+          </h1>
+          <p class="hero-sub">SematIn adalah ekstensi Chrome untuk menyimpan template teks sekali, lalu mengisinya ke WhatsApp, Threads, Facebook, dan kolom teks apa pun — lengkap dengan variabel, gambar, dan lampiran.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-shimmer" href="https://github.com/aidilaryanto/SematIn-Releases/releases" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Pasang di Chrome — Gratis
+            </a>
+            <a class="btn btn-ghost" href="#cara-kerja">Lihat cara kerja</a>
+          </div>
+          <p class="hero-trust">Gratis &nbsp;•&nbsp; Tanpa akun &nbsp;•&nbsp; Data tersimpan lokal di browser</p>
+        </div>
+
+        <div class="hero-visual" aria-label="Contoh tampilan popup SematIn">
+          <div class="mockup" role="img" aria-label="Popup SematIn menampilkan daftar template: Surat Lamaran, Balasan Pelanggan, dan Caption Instagram.">
+            <div class="mockup-header">
+              <span class="mockup-brand">
+                <span class="mockup-brand-icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </span>
+                SematIn <span class="mockup-version">v1.9</span>
+              </span>
+              <span class="mockup-new">+ New</span>
+            </div>
+            <div class="mockup-search"><span aria-hidden="true">🔍</span> Cari template…</div>
+            <div class="mockup-tabs">
+              <span class="mockup-tab active">Semua</span>
+              <span class="mockup-tab">HR</span>
+              <span class="mockup-tab">Sosial</span>
+              <span class="mockup-tab">Lainnya</span>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-top">
+                <strong>Surat Lamaran</strong>
+                <span class="mockup-attach">🖼 2 files</span>
+              </div>
+              <p>Dengan hormat, saya mengajukan lamaran untuk posisi {{posisi}}…</p>
+              <span class="mockup-use">Gunakan →</span>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-top">
+                <strong>Balasan Pelanggan</strong>
+                <span class="mockup-star" aria-hidden="true">★</span>
+              </div>
+              <p>Halo {{nama}}, terima kasih sudah menghubungi kami…</p>
+              <span class="mockup-use">Gunakan →</span>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-card-top">
+                <strong>Caption Instagram</strong>
+              </div>
+              <p>✨ Kabar baik! Pendaftaran sudah dibuka…</p>
+              <span class="mockup-use">Gunakan →</span>
+            </div>
+          </div>
+          <div class="mockup-fill" aria-hidden="true">
+            <span class="mockup-fill-label">Template terisi di WhatsApp</span>
+            <p class="mockup-fill-text"><span id="mockup-fill-typed"></span><span class="typing-caret">▍</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee" aria-label="Contoh template">
+      <div class="marquee-track" id="marquee-track">
+        <span>Surat Lamaran</span><i>•</i>
+        <span>Balasan Chat Pelanggan</span><i>•</i>
+        <span>Caption Instagram</span><i>•</i>
+        <span>Pengumuman Lowongan</span><i>•</i>
+        <span>Follow-up Email</span><i>•</i>
+        <span>Ucapan Terima Kasih</span><i>•</i>
+        <span>Konfirmasi Pesanan</span><i>•</i>
+        <span>Pengingat Pembayaran</span><i>•</i>
+      </div>
+    </section>
+
+    <!-- Interactive demo -->
+    <section class="demo" id="demo">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Coba langsung</p>
+          <h2>Isi template tanpa mengetik ulang</h2>
+          <p class="section-sub">Ini simulasi cara kerja SematIn. Isi variabelnya, tekan tombolnya, dan lihat template terisi — persis seperti di ekstensi aslinya.</p>
+        </div>
+        <div class="demo-grid reveal">
+          <form class="demo-form" id="demo-form">
+            <label for="demo-nama">Nama</label>
+            <input type="text" id="demo-nama" value="Aidil" autocomplete="off">
+            <label for="demo-posisi">Posisi yang dilamar</label>
+            <input type="text" id="demo-posisi" value="Frontliner" autocomplete="off">
+            <label for="demo-tanggal">Tanggal</label>
+            <input type="text" id="demo-tanggal" value="24 November 2026" autocomplete="off">
+            <button type="submit" class="btn btn-primary">Isi template →</button>
+            <p class="demo-note">Variabel <code>{{nama}}</code>, <code>{{posisi}}</code>, dan <code>{{tanggal}}</code> diganti otomatis.</p>
+          </form>
+          <div class="demo-output">
+            <p class="demo-output-label">Hasil — siap ditempel ke mana saja</p>
+            <div class="demo-composer" id="demo-composer" aria-live="polite">
+              <p class="demo-placeholder">Tekan “Isi template” untuk melihat hasilnya di sini.</p>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="demo-copy" disabled>Salin hasil</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features bento -->
+    <section class="features" id="fitur">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Fitur</p>
+          <h2>Semua yang sering kamu ketik, tinggal sekali klik</h2>
+          <p class="section-sub">Bukan sekadar simpan teks. SematIn menangani variabel, gambar, lampiran, dan pengisian di semua situs yang kamu pakai setiap hari.</p>
+        </div>
+        <div class="bento">
+          <article class="bento-card bento-wide spotlight-card reveal">
+            <div class="bento-visual bento-visual-image" aria-hidden="true">
+              <span class="bento-img">🖼</span>
+              <span class="bento-progress"><span class="bento-progress-bar"></span> Mengunggah gambar…</span>
+            </div>
+            <h3>Sisip gambar</h3>
+            <p>Gambar diunggah otomatis ke Catbox saat disisipkan — sebagai gambar di dalam teks atau sebagai file lampiran. Bisa banyak file sekaligus, progresnya terlihat langsung di tempatnya.</p>
+            <p class="bento-tag">Baru di v1.9</p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-visual" aria-hidden="true"><span class="bento-emoji">🖱️</span></div>
+            <h3>Klik-kanan, langsung terisi</h3>
+            <p>Klik kanan di kolom teks apa pun, pilih template dari menu SematIn, dan teks langsung terisi. Kalau ada variabel, form isian terbuka dulu.</p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-visual" aria-hidden="true"><span class="bento-emoji">🔗</span></div>
+            <h3>Import dari URL</h3>
+            <p>Tempel link file JSON template di dialog Backup — dari GitHub raw, gist, atau Catbox — dan template langsung masuk tanpa perlu mengunduh dulu.</p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-visual" aria-hidden="true"><span class="bento-emoji">🗂️</span></div>
+            <h3>Pustaka gambar</h3>
+            <p>Semua gambar yang pernah diunggah dari template kamu terkumpul di satu tempat. Pakai ulang sebagai gambar atau file, tanpa upload lagi.</p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-visual" aria-hidden="true"><span class="bento-emoji">{{ }}</span></div>
+            <h3>Variabel otomatis</h3>
+            <p><code>{{nama}}</code>, tanggal hari ini dengan format bebas, sampai nomor urut otomatis — semuanya terisi sendiri setiap kali template dipakai.</p>
+          </article>
+
+          <article class="bento-card spotlight-card reveal">
+            <div class="bento-visual" aria-hidden="true"><span class="bento-emoji">📦</span></div>
+            <h3>Arsip, cari, &amp; ekspor</h3>
+            <p>Arsipkan template lama, cari dalam sekejap, dan ekspor-impor cadangan JSON tanpa kehilangan gambar, arsip, atau hitungan pemakaian.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="steps" id="cara-kerja">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Cara kerja</p>
+          <h2>Tiga langkah, selesai</h2>
+        </div>
+        <ol class="steps-grid">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Simpan sekali</h3>
+            <p>Tulis template di popup SematIn, tambahkan variabel seperti <code>{{nama}}</code>, dan sisipkan gambar kalau perlu.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Pilih template</h3>
+            <p>Buka popup dan tekan “Gunakan”, atau klik-kanan di kolom teks dan pilih dari menu SematIn.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Terisi otomatis</h3>
+            <p>Teks dan gambar menempel di kolom tujuan — WhatsApp, Threads, Facebook, atau situs apa pun. Variabel sudah terisi.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Platforms -->
+    <section class="platforms">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker">Kompatibilitas</p>
+          <h2>Bekerja di mana kamu mengetik</h2>
+          <p class="section-sub">Satu ekstensi untuk semua kolom teks yang kamu pakai setiap hari.</p>
+        </div>
+        <ul class="platform-list reveal">
+          <li>WhatsApp</li>
+          <li>Facebook</li>
+          <li>Threads</li>
+          <li>Instagram</li>
+          <li>LinkedIn</li>
+          <li>Gmail</li>
+          <li>Google Docs</li>
+          <li>Chrome</li>
+          <li>Microsoft Edge</li>
+        </ul>
+        <p class="platform-note reveal">Chrome dan Edge berbasis Chromium (Manifest V3). Di Threads, gambar dilampirkan lewat file input composer; di situs lain lewat tempel biasa.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container faq-inner">
+        <div class="section-head reveal">
+          <p class="section-kicker">FAQ</p>
+          <h2>Yang sering ditanyakan</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>Apakah SematIn gratis?</summary>
+            <p>Ya, gratis. Tidak ada akun, tidak ada langganan, dan tidak ada batas jumlah template. Unduh dari GitHub Releases dan langsung pakai.</p>
+          </details>
+          <details>
+            <summary>Bagaimana cara memasangnya?</summary>
+            <p>Unduh file zip dari <a href="https://github.com/aidilaryanto/SematIn-Releases/releases" target="_blank" rel="noopener">SematIn-Releases</a>, ekstrak, lalu buka <code>chrome://extensions</code>, aktifkan Developer mode, dan pilih “Load unpacked” ke folder hasil ekstrak.</p>
+          </details>
+          <details>
+            <summary>Apakah data saya aman?</summary>
+            <p>Template tersimpan lokal di browser (chrome.storage.local) dan tidak dikirim ke mana-mana. Gambar hanya diunggah ke Catbox saat kamu menyisipkannya, dan tautannya tersimpan bersama template.</p>
+          </details>
+          <details>
+            <summary>Apakah bisa di Microsoft Edge?</summary>
+            <p>Ya. Edge berbasis Chromium dan mendukung ekstensi Manifest V3 yang sama dengan Chrome, jadi SematIn bisa dipasang dengan cara yang sama (Load unpacked dari <code>edge://extensions</code>).</p>
+          </details>
+          <details>
+            <summary>Apakah bisa dipakai di HP?</summary>
+            <p>Belum. SematIn adalah ekstensi Chrome desktop, jadi dipakai di Chrome atau Edge di komputer.</p>
+          </details>
+          <details>
+            <summary>Di mana saya bisa minta fitur atau lapor bug?</summary>
+            <p>Melalui Issues di repositori GitHub <a href="https://github.com/aidilaryanto/SematIn" target="_blank" rel="noopener">aidilaryanto/SematIn</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="final-cta-card reveal">
+          <h2>Berhenti mengetik hal yang sama.</h2>
+          <p>Simpan sekali, pakai berkali-kali — mulai dari template pertamamu hari ini.</p>
+          <a class="btn btn-primary btn-shimmer btn-lg" href="https://github.com/aidilaryanto/SematIn-Releases/releases" target="_blank" rel="noopener">Pasang SematIn — Gratis</a>
+          <p class="final-cta-note">v1.9 • Chrome &amp; Edge • Tanpa akun</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">SematIn</span>
+        <p>Simpan sekali, gunakan berkali-kali.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Tautan footer">
+        <a href="https://github.com/aidilaryanto/SematIn" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/aidilaryanto/SematIn-Releases/releases" target="_blank" rel="noopener">Unduh</a>
+        <a href="https://github.com/aidilaryanto/SematIn/issues" target="_blank" rel="noopener">Lapor Bug</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <p class="footer-copy">© 2026 SematIn. Dibuat untuk yang sering mengetik hal yang sama.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
