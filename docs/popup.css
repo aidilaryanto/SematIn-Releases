@@ -3155,12 +3155,6 @@ body.dark-theme .var-live-preview hr {
   flex-shrink: 0;
 }
 
-.delete-icon-badge.update-icon-badge {
-  background: var(--primary-light);
-  color: var(--primary);
-  border-color: var(--primary-border);
-}
-
 .delete-modal-body {
   display: flex;
   flex-direction: column;
