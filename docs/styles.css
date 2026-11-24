@@ -501,7 +501,6 @@ html.js .reveal.visible { opacity: 1; transform: none; }
 }
 /* Many more strip */
 .more-features {
-  margin-top: 20px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
