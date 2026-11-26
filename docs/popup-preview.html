@@ -16,7 +16,7 @@
         <div>
           <div class="title-row">
             <h1>SematIn</h1>
-            <span id="header-version-badge" class="header-version-badge" title="Installed version">v2.0.1</span>
+            <span id="header-version-badge" class="header-version-badge" title="Installed version">v2.0.2</span>
           </div>
           <span class="subtitle">Simpan sekali, gunakan berkali-kali</span>
         </div>
@@ -85,12 +85,14 @@
             <div class="template-title" title="Balasan Pelanggan">Balasan Pelanggan</div>
             <div class="template-meta-row">
               <span class="template-category-badge">Layanan</span>
-              <span class="template-favorite-badge" title="Favorite" aria-label="Favorite"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
             </div>
           </div>
           <div class="template-actions-column">
             <div class="template-actions">
               <button type="button" class="btn-use" title="Fill the active field">Use</button>
+              <button type="button" class="btn-icon btn-favorite-template is-favorite" title="Remove from favorites" aria-label="Remove from favorites">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </button>
               <button type="button" class="btn-icon btn-preview-template" title="Preview template" aria-label="Preview template">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               </button>
@@ -130,6 +132,10 @@
       </div>
 
       <footer class="list-footer">
+        <button type="button" id="btn-support-trakteer" class="footer-trakteer-btn" title="Dukung SematIn di Trakteer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span>Trakteer Saya</span>
+        </button>
         <div id="template-pagination" class="template-pagination hidden"></div>
         <div class="settings-wrapper">
           <button type="button" id="btn-toggle-settings" class="btn-setting-icon" title="Settings" aria-haspopup="menu" aria-expanded="false">

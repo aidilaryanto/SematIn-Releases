@@ -498,6 +498,24 @@ body {
   color: var(--text-main);
 }
 
+.template-pagination.page-window-slide-forward .pagination-page-btn {
+  animation: paginate-slide-in-right 0.3s ease;
+}
+
+.template-pagination.page-window-slide-backward .pagination-page-btn {
+  animation: paginate-slide-in-left 0.3s ease;
+}
+
+@keyframes paginate-slide-in-right {
+  from { transform: translateX(14px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes paginate-slide-in-left {
+  from { transform: translateX(-14px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
 .pagination-btn.active {
   background: transparent;
   color: #ffffff;
@@ -701,8 +719,7 @@ body {
   color: var(--danger);
 }
 
-.template-category-badge,
-.template-favorite-badge {
+.template-category-badge {
   display: inline-flex;
   align-items: center;
   padding: 1.5px 7px;
@@ -719,19 +736,6 @@ body {
   color: var(--primary-text);
   background: var(--primary-light);
   border: 1px solid var(--primary-border);
-}
-
-.template-favorite-badge {
-  justify-content: center;
-  color: #d97706;
-  background: #fff7d6;
-  border-color: #f3d27a;
-}
-
-.dark-theme .template-favorite-badge {
-  color: #fbbf24;
-  background: rgba(217, 119, 6, 0.15);
-  border-color: rgba(217, 119, 6, 0.45);
 }
 
 .template-actions {
@@ -776,6 +780,18 @@ body {
 .btn-delete-template:hover {
   color: var(--danger);
   background: var(--danger-bg);
+}
+
+.btn-favorite-template.is-favorite {
+  color: #d97706;
+  background: #fff7d6;
+  border-color: #f3d27a;
+}
+
+.dark-theme .btn-favorite-template.is-favorite {
+  color: #fbbf24;
+  background: rgba(217, 119, 6, 0.15);
+  border-color: rgba(217, 119, 6, 0.45);
 }
 
 .template-more-menu {
@@ -828,6 +844,18 @@ body {
   border-color: var(--border-color);
 }
 
+.btn-favorite-template:hover {
+  color: #d97706;
+  background: #fff7d6;
+  border-color: #f3d27a;
+}
+
+.dark-theme .btn-favorite-template:hover {
+  color: #fbbf24;
+  background: rgba(217, 119, 6, 0.15);
+  border-color: rgba(217, 119, 6, 0.45);
+}
+
 /* Footer dengan Ikon Setting & Menu List */
 .list-footer {
   display: flex;
@@ -838,14 +866,16 @@ body {
   border-top: 1px solid var(--border-soft);
 }
 
+.list-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .settings-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
-}
-
-.list-footer .settings-wrapper {
-  margin-left: auto;
 }
 
 .btn-setting-icon {
@@ -884,12 +914,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.25);
   z-index: 40;
-}
-
-.settings-menu-divider {
-  height: 1px;
-  background: var(--border-soft);
-  margin: 4px 2px;
 }
 
 .settings-menu-section {
@@ -964,16 +988,88 @@ body {
   transform: translateX(13px);
 }
 
-.settings-menu-credit {
-  display: flex;
+/* Soft red tint instead of solid red, so the button blends with the extension theme. */
+.footer-trakteer-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 6px 9px;
-  color: var(--text-muted);
-  font-size: 11px;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--danger-border);
+  border-radius: 999px;
+  background: var(--danger-bg);
+  color: var(--danger-solid);
+  font-size: 12px;
   font-weight: 600;
   white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.footer-trakteer-btn:hover {
+  background: var(--danger-border);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(190, 30, 45, 0.15);
+}
+
+.footer-trakteer-btn span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.footer-trakteer-btn:hover span {
+  transform: translateY(-1px);
+}
+
+.footer-trakteer-btn svg {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: trakteer-heart-beat 1.6s ease-in-out infinite;
+}
+
+.footer-trakteer-btn:hover svg {
+  animation-duration: 0.8s;
+}
+
+@keyframes trakteer-heart-beat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.35); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+  60% { transform: scale(1); }
+}
+
+.trakteer-modal-card {
+  max-width: 440px;
+  height: 520px;
+}
+
+.trakteer-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Crop the embed to the banner: shift the frame up past its header, and widen it to hide its scrollbar. */
+.trakteer-frame-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.trakteer-frame {
+  width: calc(100% + 15px);
+  height: calc(100% + 105px);
+  /* Shift the frame up to the banner and center the wider frame so the payment button stays centered. */
+  margin-top: -105px;
+  margin-left: -7.5px;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  /* Trakteer's page follows the system theme, so force its light theme here. */
+  color-scheme: light;
 }
 
 .settings-mode-badge {
@@ -1867,6 +1963,28 @@ body {
 .table-panel-close:hover {
   background: var(--danger-border);
   color: var(--danger-solid);
+}
+
+/* Back is a neutral navigation button, not a red close button. */
+#btn-back-trakteer {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+#btn-back-trakteer:hover {
+  background: var(--border-soft);
+  color: var(--text-main);
+}
+
+/* Shown from the start but disabled on the first page; enabled once past it. */
+#btn-back-trakteer:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#btn-back-trakteer:disabled:hover {
+  background: transparent;
+  color: var(--text-muted);
 }
 
 .table-panel-row {
@@ -2783,6 +2901,83 @@ html.sidebar-view .editor-expand-btn {
   text-align: center;
 }
 
+.template-history-current-badge {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+
+.template-history-select {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.template-history-compare-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 10px;
+  margin-top: 4px;
+  border-top: 1px solid var(--border-color);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.template-history-diff {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+}
+
+.template-history-diff-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.template-history-diff-titles {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.template-history-diff-body {
+  overflow-y: auto;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.template-history-diff-line {
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.template-history-diff-line.diff-add {
+  background: rgba(34, 197, 94, 0.14);
+}
+
+.template-history-diff-line.diff-del {
+  background: rgba(239, 68, 68, 0.14);
+}
+
+.template-history-diff-line.diff-same {
+  color: var(--text-muted);
+}
+
 .template-preview-content table {
   max-width: 100%;
   table-layout: fixed;
@@ -3343,10 +3538,6 @@ body {
   border-radius: 999px;
   font-size: 9.5px;
   letter-spacing: 0.01em;
-}
-
-.template-favorite-badge {
-  min-height: 18px;
 }
 
 .template-actions-column {
