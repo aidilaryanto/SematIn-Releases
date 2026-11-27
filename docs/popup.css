@@ -435,6 +435,13 @@ body {
   color: #ffffff;
 }
 
+.category-tab-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
 /* Template List: tinggi fleksibel sesuai isi dengan batas maksimal */
 .list-container {
   display: flex;
@@ -736,6 +743,30 @@ body {
   color: var(--primary-text);
   background: var(--primary-light);
   border: 1px solid var(--primary-border);
+}
+
+.template-category-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  margin-right: 4px;
+}
+
+.template-card.is-dragging {
+  opacity: 0.45;
+}
+
+.template-card.drop-before {
+  box-shadow: 0 -2px 0 0 var(--primary);
+}
+
+.template-card.drop-after {
+  box-shadow: 0 2px 0 0 var(--primary);
+}
+
+.template-card[draggable="true"] {
+  cursor: grab;
 }
 
 .template-actions {
@@ -2710,6 +2741,43 @@ html.sidebar-view .editor-expand-btn {
   padding: 16px 0;
 }
 
+.image-library-item-uploading {
+  cursor: default;
+}
+
+.image-library-item-uploading:hover::after,
+.image-library-item-uploading:focus-within::after {
+  opacity: 0;
+}
+
+.image-library-item-uploading .image-library-thumb {
+  opacity: 0.55;
+}
+
+.image-library-uploading-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.image-library-uploading-badge .image-upload-spinner {
+  border-color: rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+}
+
 .image-lightbox-backdrop {
   background: rgba(0, 0, 0, 0.72);
   z-index: 120;
@@ -3295,6 +3363,19 @@ body.dark-theme .var-live-preview hr {
 .category-manage-delete:hover {
   background: var(--danger-bg);
   color: var(--danger);
+}
+
+.category-manage-color-btn {
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+}
+
+.category-manage-color-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .category-rename-input {
