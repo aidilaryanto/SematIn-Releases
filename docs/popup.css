@@ -762,6 +762,39 @@ body {
   opacity: 0.45;
 }
 
+body.compact-list .template-card {
+  padding: 5px 10px;
+}
+
+body.compact-list .template-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.compact-list .template-title {
+  font-size: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+body.compact-list .template-meta-row {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+body.compact-list .list-container {
+  gap: 4px;
+}
+
+.category-tab.is-dragging {
+  opacity: 0.45;
+}
+
+.category-tab[draggable="true"] {
+  cursor: grab;
+}
+
 .template-card[draggable="true"] {
   cursor: grab;
 }
@@ -3527,6 +3560,10 @@ body.dark-theme .var-live-preview hr {
   background: var(--bg-page);
 }
 
+.category-manage-item-hidden .category-manage-name {
+  opacity: 0.55;
+}
+
 .category-manage-info {
   display: flex;
   align-items: center;
@@ -3713,7 +3750,7 @@ body {
   box-shadow: 0 5px 12px color-mix(in srgb, var(--accent) 22%, transparent);
 }
 
-.brand-icon svg {
+.brand-icon img {
   height: 26px;
   width: auto;
   display: block;
